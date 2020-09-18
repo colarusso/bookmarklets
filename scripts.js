@@ -73,6 +73,7 @@ block_to_insert.innerHTML = `
  <option value="3">introduction</option>
  <option value="4">thinking of me</option>
  <option value="5">head down</option>
+ <option disabled>──────────</option>
  <option value="6">consideration</option>
  <option value="7">assistance</option>
  <option value="8">always</option>
