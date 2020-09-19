@@ -6,7 +6,7 @@ function collect(choice) {
 
  to = "" 
   
- if (choice >= 0 && choice<=10) {
+ if (choice >= 0 && choice<=11) {
   if (!document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)){
    to = prompt("To?");
   } else {
@@ -42,39 +42,42 @@ to + `,\n\nThank you for your patience. `
 ,to + `,\n\nThank you for the introduction. I'm moving you to BCC to avoid cluttering your inbox. \n\n` + introduced + `,\n\nIf you would like to jump on a call. You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. `
  
 // 5
-,to + `,\n\nThank you for thinking of me. I look forward to giving this a look. `
+,to + `,\n\nThanks. I share this. `
 
 // 6
+,to + `,\n\nThank you for thinking of me. I look forward to giving this a look. `
+   
+// 7
 ,to + `,\n\nThank you for thinking of me. I hadn't seen this. `
   
-// 7
+// 8
 ,to + `,\n\nThank you. I'm head down on something right now, but I'll get back to you soon. `
 
-// 8
+// 9
 ,to + `,\n\nThat's a tough one. I'm not sure I have much to offer there. `
 
-// 9
+// 10
 ,to + `,\n\nThank you for reaching out. However, I'm not exactly sure what you're looking for. Could you be more specific about an ask, something more than just "looking to talk?" How exactly do you think I could help? `
   
-// 10
+// 11
 ,to + `,\n\nThank you for your interest in Learned Hands (https://learnedhands.law.stanford.edu/). The program allows you to track your hours within the app and requires no direct supervision. We hope that you find your work on the project fulfilling and that you'll share it with your colleagues.\n\nYou can see how we're putting your work to use here: https://spot.suffolklitlab.org/\n\nIf your pro bono office would like to learn more, please let me know. `
   
-// 11
+// 12
 ,`You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. `
   
-// 12
+// 13
 ,`To help schedule a time, I've set up a Doodle. I'll loop back after folks have a chance to mark their availability.\n\n `
    
-// 13
+// 14
 ,`Thank you for your time. `
 
-// 14
+// 15
 ,`Thank you for your time and consideration. ` 
   
-// 15
+// 16
 ,`Thank you for your time and assistance. `
 
-// 16
+// 17
 ,`As always, thank you for your time and assistance. `
 
 ];
@@ -114,20 +117,21 @@ block_to_insert.innerHTML = `
  <option value="2">Book Call</option>
  <option value="3">Book Press Call</option>
  <option value="4">Thx 4 Intro; Book Call.</option>
- <option value="5">Thx 4 thinking of me</option>
- <option value="6">Thx; Hadn't Seen</option>
- <option value="7">Head Down; Later</option>
- <option value="8">Tough One</option>
- <option value="9">Clarify Ask</option>
- <option value="10">LH Volunteer</option>
+ <option value="5">Thx; I'll share.</option>
+ <option value="6">Thx 4 thinking of me</option>
+ <option value="7">Thx; Hadn't Seen</option>
+ <option value="8">Head Down; Later</option>
+ <option value="9">Tough One</option>
+ <option value="10">Clarify Ask</option>
+ <option value="11">LH Volunteer</option>
  <option disabled>──────────</option>
  <option disabled>STRING:</option>
- <option value="11">Book Call</option>
- <option value="12">Doodle</option>
- <option value="13">Thx 4 UR Time</option>
- <option value="14">Thx 4 UR Time &amp; Consideration</option>
- <option value="15">Thx 4 UR Time &amp; Assistance</option>
- <option value="16">As Always, Thx</option>
+ <option value="12">Book Call</option>
+ <option value="13">Doodle</option>
+ <option value="14">Thx 4 UR Time</option>
+ <option value="15">Thx 4 UR Time &amp; Consideration</option>
+ <option value="16">Thx 4 UR Time &amp; Assistance</option>
+ <option value="17">As Always, Thx</option>
  <option disabled>──────────</option>
  <option value="10000">Edit Bookmarklet</option>
 </select>
