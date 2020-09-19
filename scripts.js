@@ -4,14 +4,16 @@ if (document.getElementById("boilerplate")) {
 
 function collect(choice) {
 
- if (choice >= 0 && choice<=8) {
+ to = "" 
+  
+ if (choice >= 0 && choice<=10) {
   if (!document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)){
    to = prompt("To?");
   } else {
    to = document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)[1].split(" ")[0]
   }
- } else {
-  to = ""
+ } else if (choice == 10000) {
+   window.open("https://github.com/colarusso/boilerplate/edit/master/scripts.js");
  }
 
  if (choice==3) {
@@ -120,6 +122,8 @@ block_to_insert.innerHTML = `
  <option value="13">Thx 4 UR Time &amp; Consideration</option>
  <option value="14">Thx 4 UR Time &amp; Assistance</option>
  <option value="15">As Always, Thx</option>
+ <option disabled>──────────</option>
+ <option value="10000">Edit Bookmarklet</option>
 </select>
 `;
 block_to_insert.style.position = "fixed";
