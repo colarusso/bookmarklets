@@ -103,13 +103,13 @@ block_to_insert.innerHTML = `
  <option disabled>──────────</option>
  <option disabled>ADDRESS + BODY:</option>
  <option value="0">THX 4 Patience</option>
- <option value="1">Office Hours</option>
- <option value="2">Setup Call</option>
- <option value="3">Press Call</option>
- <option value="4">Thx 4 Intro.</option>
+ <option value="1">Book Office Hours</option>
+ <option value="2">Book Call</option>
+ <option value="3">Book Press Call</option>
+ <option value="4">Thx 4 Intro; Book Call.</option>
  <option value="5">Thx 4 thinking of me</option>
  <option value="6">Thx; Hadn't Seen</option>
- <option value="7">Head Down</option>
+ <option value="7">Head Down; Later</option>
  <option value="8">Tough One</option>
  <option value="9">Clarify Ask</option>
  <option value="10">LH Volunteer?</option>
