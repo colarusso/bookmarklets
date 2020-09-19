@@ -1,6 +1,10 @@
+if (document.getElementById("boilerplate")) {
+  document.getElementById("boilerplate").remove();
+}
+
 function collect(choice) {
 
- if (choice<=5) {
+ if (choice >= 0 && choice<=8) {
   if (!document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)){
    to = prompt("To?");
   } else {
@@ -18,25 +22,54 @@ function collect(choice) {
 
  text_to_insert_arry = [
 
+// 0
 to + `,\n\nThank you for your patience. `
 
+// 1
 ,to + `,\n\nThank you for reaching out. If you'd like to have a call. You can find my availability and book a time here: https://calendly.com/dcolarusso/office-hours\n\nI look forward to speaking soon. `
 
+// 2
+,to + `,\n\nThank you for reaching out. If you'd like to have a call. You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. ` 
+  
+// 3
 ,to + `,\n\nThank you for reaching out. If you'd like to have a call. You can find my availability and book a time here:  https://calendly.com/dcolarusso/https://calendly.com/dcolarusso/call7546\n\nI look forward to speaking soon. `
 
+// 4
 ,to + `,\n\nThank you for the introduction. I'm moving you to BCC to avoid cluttering your inbox. \n\n` + introduced + `,\n\nIf you would like to jump on a call. You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. `
-
+ 
+// 5
 ,to + `,\n\nThank you for thinking of me. I look forward to giving this a look. `
 
-,to + `,\n\nThank you. I'm head down on some work today, but I'll get back to you soon. `
+// 6
+,to + `,\n\nThank you for thinking of me. I hadn't seen this. `
+  
+// 7
+,to + `,\n\nThank you. I'm head down on something right now, but I'll get back to you soon. `
 
-,`Thank you for your time and consideration. `
+// 8
+,to + `,\n\nThat's a tough one. I'm not sure I have much to offer there. `
 
+// 9
+,to + `,\n\nThank you for reaching out. However, I'm not exactly sure what you're looking for. Could you be more specific about an ask, something more than just "looking to talk?" How exactly do you think I could help? `
+  
+// 10
+,to + `,\n\nThank you for your interest in Learned Hands (https://learnedhands.law.stanford.edu/). The program allows you to track your hours within the app and requires no direct supervision. We hope that you find your work on the project fulfilling and that you'll share it with your colleagues.\n\nYou can see how we're putting your work to use here: https://spot.suffolklitlab.org/\n\nIf your pro bono office would like to learn more, please let me know. `
+  
+// 11
+,`You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. `
+  
+// 12
+,`Thank you for your time. `
+
+// 13
+,`Thank you for your time and consideration. ` 
+  
+// 14
 ,`Thank you for your time and assistance. `
 
+// 15
 ,`As always, thank you for your time and assistance. `
 
-,``
 ];
 
  return text_to_insert_arry[choice];
@@ -63,24 +96,34 @@ function insertAtCursor (input, textToInsert) {
 } 
 
 block_to_insert = document.createElement( 'div' );
-block_to_insert.id = "button";
+block_to_insert.id = "boilerplate";
 block_to_insert.innerHTML = `
 <select onchange="insertAtCursor(document.activeElement,collect(this.value))">
- <option value="">CHOOSE ONE</option>
- <option value="0">patience</option>
- <option value="1">office hours</option>
- <option value="2">press</option>
- <option value="3">introduction</option>
- <option value="4">thinking of me</option>
- <option value="5">head down</option>
+ <option value="-1">CHOOSE BOILERPLATE</option>
  <option disabled>──────────</option>
- <option value="6">consideration</option>
- <option value="7">assistance</option>
- <option value="8">always</option>
+ <option disabled>ADDRESS + BODY:</option>
+ <option value="0">THX 4 Patience</option>
+ <option value="1">Office Hours</option>
+ <option value="2">Setup Call</option>
+ <option value="3">Press Call</option>
+ <option value="4">Thx 4 Intro.</option>
+ <option value="5">Thx 4 thinking of me</option>
+ <option value="6">Thx; Hadn't Seen</option>
+ <option value="7">Head Down</option>
+ <option value="8">Tough One</option>
+ <option value="9">Clarify Ask</option>
+ <option value="10">LH Volunteer?</option>
+ <option disabled>──────────</option>
+ <option disabled>STRING:</option>
+ <option value="11">Book Call</option>
+ <option value="12">Thx 4 UR Time</option>
+ <option value="13">Thx 4 UR Time &amp; Consideration</option>
+ <option value="14">Thx 4 UR Time &amp; Assistance</option>
+ <option value="15">As Always, Thx</option>
 </select>
 `;
 block_to_insert.style.position = "fixed";
-block_to_insert.style.top = "10px";
-block_to_insert.style.left = "560px";
+block_to_insert.style.top = "60px";
+block_to_insert.style.right = "10px";
 container_block = document.body;
 container_block.appendChild( block_to_insert );
