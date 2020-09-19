@@ -12,6 +12,8 @@ function collect(choice) {
   } else {
    to = document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)[1].split(" ")[0]
   }
+ } else if (choice == 12) {
+   window.open("https://doodle.com/create");          
  } else if (choice == 10000) {
    window.open("https://github.com/colarusso/boilerplate/edit/master/scripts.js");
  }
@@ -61,15 +63,18 @@ to + `,\n\nThank you for your patience. `
 ,`You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. `
   
 // 12
+,`To help schedule a time, I've set up a Doodle. I'll loop back after folks have a chance to mark their availability.\n\n `
+   
+// 13
 ,`Thank you for your time. `
 
-// 13
+// 14
 ,`Thank you for your time and consideration. ` 
   
-// 14
+// 15
 ,`Thank you for your time and assistance. `
 
-// 15
+// 16
 ,`As always, thank you for your time and assistance. `
 
 ];
@@ -118,10 +123,11 @@ block_to_insert.innerHTML = `
  <option disabled>──────────</option>
  <option disabled>STRING:</option>
  <option value="11">Book Call</option>
- <option value="12">Thx 4 UR Time</option>
- <option value="13">Thx 4 UR Time &amp; Consideration</option>
- <option value="14">Thx 4 UR Time &amp; Assistance</option>
- <option value="15">As Always, Thx</option>
+ <option value="12">Doodle</option>
+ <option value="13">Thx 4 UR Time</option>
+ <option value="14">Thx 4 UR Time &amp; Consideration</option>
+ <option value="15">Thx 4 UR Time &amp; Assistance</option>
+ <option value="16">As Always, Thx</option>
  <option disabled>──────────</option>
  <option value="10000">Edit Bookmarklet</option>
 </select>
