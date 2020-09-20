@@ -135,6 +135,7 @@ block_to_insert.innerHTML = `
  <option disabled>──────────</option>
  <option value="10000">Edit Bookmarklet</option>
 </select>
+<a href="javascript:void('');" onClick="document.getElementById('boilerplate').remove();">X</a>
 `;
 block_to_insert.style.position = "fixed";
 block_to_insert.style.top = "60px";
