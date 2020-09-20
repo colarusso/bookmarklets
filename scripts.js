@@ -111,7 +111,7 @@ block_to_insert.innerHTML = `
 <select onchange="insertAtCursor(document.activeElement,collect(this.value))">
  <option value="-1">CHOOSE BOILERPLATE</option>
  <option disabled>──────────</option>
- <option disabled>ADDRESS + BODY:</option>
+ <option disabled>STARTER:</option>
  <option value="0">THX 4 Patience</option>
  <option value="1">Book Office Hours</option>
  <option value="2">Book Call</option>
@@ -135,10 +135,10 @@ block_to_insert.innerHTML = `
  <option disabled>──────────</option>
  <option value="10000">Edit Bookmarklet</option>
 </select>
-<a href="javascript:void('');" onClick="document.getElementById('boilerplate').remove();">X</a>
+&nbsp;<a href="javascript:void('');" onClick="document.getElementById('boilerplate').remove();" style="color:white;">X</a>
 `;
 block_to_insert.style.position = "fixed";
-block_to_insert.style.top = "60px";
-block_to_insert.style.right = "10px";
+block_to_insert.style.top = "15px";
+block_to_insert.style.right = "355px";
 container_block = document.body;
 container_block.appendChild( block_to_insert );
