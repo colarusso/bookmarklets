@@ -16,6 +16,8 @@ function collect(choice) {
    window.open("https://doodle.com/create");          
  } else if (choice == 10000) {
    window.open("https://github.com/colarusso/boilerplate/edit/master/scripts.js");
+ } else if (choice == 20000) {
+   window.open("https://caiorss.github.io/bookmarklet-maker/");
  }
 
  if (choice==3) {
@@ -134,6 +136,7 @@ block_to_insert.innerHTML = `
  <option value="17">As Always, Thx</option>
  <option disabled>──────────</option>
  <option value="10000">Edit Bookmarklet</option>
+ <option value="20000">Bookmarklet Maker</option>
 </select>
 &nbsp;<a href="javascript:void('');" onClick="document.getElementById('boilerplate').remove();" style="color:white;">X</a>
 `;
