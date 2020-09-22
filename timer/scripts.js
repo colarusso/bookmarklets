@@ -1,3 +1,5 @@
+var level = 1;
+
 function createCookie(name,value,days) {
 		if (days) {
 			var date = new Date();
@@ -72,13 +74,11 @@ function pause_time() {
   $('#timer').css("background-color", "white");
 }
 
-var level = 1;
-
 var head = document.getElementsByTagName('head')[0];  
 var link = document.createElement('link'); 
 link.rel = 'stylesheet';  
 link.type = 'text/css'; 
-link.href = 'https://www.codingthelaw.org/css/style.css';  
+link.href = 'https://colarusso.github.io/bookmarklets/timer/style.css';  
 head.appendChild(link);  
 
 var head = document.getElementsByTagName('head')[0];  
@@ -95,14 +95,12 @@ timer_html = document.createElement( 'div' );
 timer_html.id = "timer_div";
 timer_html.classList.add('timer_div');
 timer_html.innerHTML = `
-    <div style="float:left;margin-right:3px;">
-      <input id="timer" type=text style="width:76px;height:24px;font-size:18px;line-height:18px;text-align:center;border:0px;background:#fff;margin:0 5px" value="00:00:00" onfocus="pause_time();" onChange="find_sec();">
-    </div>
-      <div id="play" class="play" onClick="start_time()"></div>
-      <div id="pause" class="pause" onClick="pause_time()">
-       <div class="pause_bar"></div>
-       <div class="pause_bar"></div>
-      </div>
+  <div style="float:left;margin-right:3px;"><input id="timer" type=text style="width:76px;height:24px;font-size:18px;line-height:18px;text-align:center;border:0px;background:#fff;margin:0 5px" value="00:00:00" onfocus="pause_time();" onChange="find_sec();"></div>
+  <div id="play" class="play" onClick="start_time()"></div>
+  <div id="pause" class="pause" onClick="pause_time()">
+    <div class="pause_bar"></div>
+    <div class="pause_bar"></div>
+  </div>
 `;
 container_block = document.body;
 container_block.appendChild( timer_html );
