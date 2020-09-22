@@ -1,3 +1,4 @@
+
 .timer_div {
 		box-sizing: border-box;
 		position:fixed;
@@ -42,4 +43,5 @@
   border-bottom: 8px solid transparent;
   border-left: 12px solid black;
 }
+
 
