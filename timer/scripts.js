@@ -19,43 +19,6 @@ function readCookie(name) {
 	return null;
 }
 
-function check_q(qid) {
-  var ans = $("input:radio[name="+qid+"]:checked").val()
-  createCookie('l'+level+qid,ans,36500)
-  if (ans == "a") {
-    if ($("#"+qid+"_a_msg").html()!="") { $("#"+qid+"_a_msg").show(); } else { $("#"+qid+"_a_msg").hide(); }
-    $("#"+qid+"_b_msg").hide();
-    $("#"+qid+"_c_msg").hide();
-    $("#"+qid+"_d_msg").hide();
-    $("#"+qid+"_e_msg").hide();
-  } else if (ans == "b") {
-    $("#"+qid+"_a_msg").hide();
-    if ($("#"+qid+"_b_msg").html()!="") { $("#"+qid+"_b_msg").show(); } else { $("#"+qid+"_b_msg").hide(); }
-    $("#"+qid+"_c_msg").hide();
-    $("#"+qid+"_d_msg").hide();
-    $("#"+qid+"_e_msg").hide();
-  } else if (ans == "c") {
-    $("#"+qid+"_a_msg").hide();
-    $("#"+qid+"_b_msg").hide();
-    if ($("#"+qid+"_c_msg").html()!="") { $("#"+qid+"_c_msg").show(); } else { $("#"+qid+"_c_msg").hide(); }
-    $("#"+qid+"_d_msg").hide();
-    $("#"+qid+"_e_msg").hide();
-  } else if (ans == "d") {
-    $("#"+qid+"_a_msg").hide();
-    $("#"+qid+"_b_msg").hide();
-    $("#"+qid+"_c_msg").hide();
-    if ($("#"+qid+"_d_msg").html()!="") { $("#"+qid+"_d_msg").show(); } else { $("#"+qid+"_d_msg").hide(); }
-    $("#"+qid+"_e_msg").hide();
-  } else if (ans == "e") {
-    $("#"+qid+"_a_msg").hide();
-    $("#"+qid+"_b_msg").hide();
-    $("#"+qid+"_c_msg").hide();
-    $("#"+qid+"_d_msg").hide();
-    if ($("#"+qid+"_e_msg").html()!="") { $("#"+qid+"_e_msg").show(); } else { $("#"+qid+"_e_msg").hide(); }
-  }
-  return ans;
-}
-
 function find_sec() {
   timer_text = $('#timer').val().split(":");
   if ((timer_text[0]*1 >= 0) & (timer_text[1]*1 >= 0) & (timer_text[2]*1 >= 0)) {
@@ -85,6 +48,7 @@ function add() {
 
     timer();
 }
+
 function timer() {
     t = setTimeout(add, 1000);
     //if (t % 2 == 0) {
@@ -110,33 +74,38 @@ function pause_time() {
 
 var level = 1;
 
-// Get HTML head element 
 var head = document.getElementsByTagName('head')[0];  
-
-// Create new link Element 
 var link = document.createElement('link'); 
-
-// set the attributes for link element  
 link.rel = 'stylesheet';  
-
 link.type = 'text/css'; 
-
 link.href = 'https://www.codingthelaw.org/css/style.css';  
-
-// Append link element to HTML head 
 head.appendChild(link);  
 
-/*
-  <div id="timer_div" class="timer_div">
-  	<div style="float:left;margin-right:3px;"><input id="timer" type=text style="width:76px;height:24px;font-size:18px;line-height:18px;text-align:center;border:0px;background:#fff;margin:0 5px" value="00:00:00" onfocus="pause_time();" onChange="find_sec();"></div>
-    <div id="play" class="play" onClick="start_time()"></div>
-    <div id="pause" class="pause" onClick="pause_time()">
-     <div class="pause_bar"></div>
-     <div class="pause_bar"></div>
-    </div>
-  </div>
-*/
+var head = document.getElementsByTagName('head')[0];  
+var script = document.createElement('script'); 
+script.src = 'https://code.jquery.com/jquery-1.11.1.min.js';  
+head.appendChild(script);  
 
+var head = document.getElementsByTagName('head')[0];  
+var script = document.createElement('script'); 
+script.src = 'https://code.jquery.com/ui/1.11.1/jquery-ui.js';  
+head.appendChild(script);  
+
+timer_html = document.createElement( 'div' );
+timer_html.id = "timer_div";
+timer_html.classList.add('timer_div');
+timer_html.innerHTML = `
+    <div style="float:left;margin-right:3px;">
+      <input id="timer" type=text style="width:76px;height:24px;font-size:18px;line-height:18px;text-align:center;border:0px;background:#fff;margin:0 5px" value="00:00:00" onfocus="pause_time();" onChange="find_sec();">
+    </div>
+      <div id="play" class="play" onClick="start_time()"></div>
+      <div id="pause" class="pause" onClick="pause_time()">
+       <div class="pause_bar"></div>
+       <div class="pause_bar"></div>
+      </div>
+`;
+container_block = document.body;
+container_block.appendChild( timer_html );
 
 if (readCookie('l'+level+'timer')){
   $('#timer').val(readCookie('l'+level+'timer'));
