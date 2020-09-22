@@ -15,7 +15,7 @@ function collect(choice) {
  } else if (choice == 12) {
    window.open("https://doodle.com/create");          
  } else if (choice == 10000) {
-   window.open("https://github.com/colarusso/boilerplate/edit/master/scripts.js");
+   window.open("https://github.com/colarusso/bookmarklets/edit/master/boilerplate/scripts.js");
  } else if (choice == 20000) {
    window.open("https://caiorss.github.io/bookmarklet-maker/");
  }
