@@ -12,7 +12,7 @@ function collect(choice) {
   } else {
    to = document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)[1].split(" ")[0]
   }
- } else if (choice == 12) {
+ } else if (choice == 13) {
    window.open("https://doodle.com/create");          
  } else if (choice == 10000) {
    window.open("https://github.com/colarusso/bookmarklets/edit/master/boilerplate/scripts.js");
