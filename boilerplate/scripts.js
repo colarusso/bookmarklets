@@ -146,6 +146,6 @@ block_to_insert.innerHTML = `
 `;
 block_to_insert.style.position = "fixed";
 block_to_insert.style.top = "15px";
-block_to_insert.style.right = "400px";
+block_to_insert.style.right = "550px";
 container_block = document.body;
 container_block.appendChild( block_to_insert );
