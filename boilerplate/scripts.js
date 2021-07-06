@@ -6,13 +6,13 @@ function collect(choice) {
 
  to = "" 
   
- if (choice >= 0 && choice<100) {
+ if (choice >= 0 && choice<=13) {
   if (!document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)){
    to = prompt("To?");
   } else {
    to = document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)[1].split(" ")[0]
   }
- } else if (choice == 14) {
+ } else if (choice == 15) {
    window.open("https://doodle.com/create");          
  } else if (choice == 10000) {
    window.open("https://github.com/colarusso/bookmarklets/edit/master/boilerplate/scripts.js");
@@ -73,22 +73,22 @@ to + `,\n\nThank you for your patience. `
 // -------------------------------------   
 // -------------------------------------      
  
-// 113
+// 14
 ,`You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. `
   
-// 114
+// 15
 ,`To help schedule a time, I've set up a Doodle. I'll loop back after folks have a chance to mark their availability.\n\n `
    
-// 115
+// 16
 ,`Thank you for your time. `
 
-// 116
+// 17
 ,`Thank you for your time and consideration. ` 
   
-// 117
+// 18
 ,`Thank you for your time and assistance. `
 
-// 118
+// 19
 ,`As always, thank you for your time and assistance. `
 
 ];
@@ -139,12 +139,12 @@ block_to_insert.innerHTML = `
  <option value="13">Docassemble Server</otion>
  <option disabled>──────────</option>
  <option disabled>STRING:</option>
- <option value="113">Book Call</option>
- <option value="114">Doodle</option>
- <option value="115">Thx 4 UR Time</option>
- <option value="116">Thx 4 UR Time &amp; Consideration</option>
- <option value="117">Thx 4 UR Time &amp; Assistance</option>
- <option value="118">As Always, Thx</option>
+ <option value="14">Book Call</option>
+ <option value="15">Doodle</option>
+ <option value="16">Thx 4 UR Time</option>
+ <option value="17">Thx 4 UR Time &amp; Consideration</option>
+ <option value="18">Thx 4 UR Time &amp; Assistance</option>
+ <option value="19">As Always, Thx</option>
  <option disabled>──────────</option>
  <option value="10000">Edit Bookmarklet</option>
  <option value="20000">Bookmarklet Maker</option>
