@@ -6,7 +6,7 @@ function collect(choice) {
 
  to = "" 
   
- if (choice >= 0 && choice<=12) {
+ if (choice >= 0 && choice<100) {
   if (!document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)){
    to = prompt("To?");
   } else {
@@ -63,26 +63,32 @@ to + `,\n\nThank you for your patience. `
 
 // 11
 ,to + `,\n\nThank you for reaching out. However, I'm not exactly sure what you're looking for. Could you be more specific about an ask, something more than just "looking to talk?" How exactly do you think I could help? `
-  
+
 // 12
 ,to + `,\n\nThank you for your interest in Learned Hands (https://learnedhands.law.stanford.edu/). The program allows you to track your hours within the app and requires no direct supervision. We hope that you find your work on the project fulfilling and that you'll share it with your colleagues.\n\nYou can see how we're putting your work to use here: https://spot.suffolklitlab.org/\n\nIf your pro bono office would like to learn more, please let me know. `
-  
-// 13
+
+//13
+,to + `,\n\nThis server is for volunteers and students associated with the Suffolk LIT Lab--not the general public. If you would like a Docassemble server, we recommend either https://www.documate.org/ or https://www.semblehost.com/ `
+   
+// -------------------------------------   
+// -------------------------------------      
+ 
+// 113
 ,`You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. `
   
-// 14
+// 114
 ,`To help schedule a time, I've set up a Doodle. I'll loop back after folks have a chance to mark their availability.\n\n `
    
-// 15
+// 115
 ,`Thank you for your time. `
 
-// 16
+// 116
 ,`Thank you for your time and consideration. ` 
   
-// 17
+// 117
 ,`Thank you for your time and assistance. `
 
-// 18
+// 118
 ,`As always, thank you for your time and assistance. `
 
 ];
@@ -130,14 +136,15 @@ block_to_insert.innerHTML = `
  <option value="10">Tough One</option>
  <option value="11">Clarify Ask</option>
  <option value="12">LH Volunteer</option>
+ <option value="13">Docassemble Server</otion>
  <option disabled>──────────</option>
  <option disabled>STRING:</option>
- <option value="13">Book Call</option>
- <option value="14">Doodle</option>
- <option value="15">Thx 4 UR Time</option>
- <option value="16">Thx 4 UR Time &amp; Consideration</option>
- <option value="17">Thx 4 UR Time &amp; Assistance</option>
- <option value="18">As Always, Thx</option>
+ <option value="113">Book Call</option>
+ <option value="114">Doodle</option>
+ <option value="115">Thx 4 UR Time</option>
+ <option value="116">Thx 4 UR Time &amp; Consideration</option>
+ <option value="117">Thx 4 UR Time &amp; Assistance</option>
+ <option value="118">As Always, Thx</option>
  <option disabled>──────────</option>
  <option value="10000">Edit Bookmarklet</option>
  <option value="20000">Bookmarklet Maker</option>
