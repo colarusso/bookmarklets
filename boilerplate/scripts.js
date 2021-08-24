@@ -6,13 +6,13 @@ function collect(choice) {
 
  to = "" 
   
- if (choice >= 0 && choice<=13) {
+ if (choice >= 0 && choice<=14) {
   if (!document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)){
    to = prompt("To?");
   } else {
    to = document.querySelector('[aria-label="Reading Pane"]').innerHTML.match(/To:.*>\s?(.*)<\/li>/)[1].split(" ")[0]
   }
- } else if (choice == 15) {
+ } else if (choice == 16) {
    window.open("https://doodle.com/create");          
  } else if (choice == 10000) {
    window.open("https://github.com/colarusso/bookmarklets/edit/master/boilerplate/scripts.js");
@@ -62,7 +62,7 @@ to + `,\n\nThank you for your patience. `
 ,to + `,\n\nThat's a tough one. I'm not sure I have much to offer there. `
 
 // 11
-,to + `,\n\nThank you for reaching out. However, I'm not exactly sure what you're looking for. Could you be more specific about an ask, something more than just "looking to talk?" How exactly do you think I could help? `
+,to + `,\n\nThank you for reaching out. However, I'm not exactly sure what you're looking for. Could you be more specific about an ask, something more than just "looking to talk?" How exactly do you think I could help? FWIW, this bot might help. https://colarusso.github.io/faq/coldcall.html`
 
 // 12
 ,to + `,\n\nThank you for your interest in Learned Hands (https://learnedhands.law.stanford.edu/). The program allows you to track your hours within the app and requires no direct supervision. We hope that you find your work on the project fulfilling and that you'll share it with your colleagues.\n\nYou can see how we're putting your work to use here: https://spot.suffolklitlab.org/\n\nIf your pro bono office would like to learn more, please let me know. `
@@ -70,25 +70,28 @@ to + `,\n\nThank you for your patience. `
 //13
 ,to + `,\n\nThis server is for volunteers and students associated with the Suffolk LIT Lab--not the general public. If you would like a Docassemble server, we recommend either https://www.documate.org/ or https://www.semblehost.com/ `
    
+//14
+,to + `,\n\nI recieve a number of cold emails. So, I put together this interactive decision tree to help shave a few emails off any back and forth. Use it to: book a meeting/call, learn about my classes, ask about speaking engagements, and much more. ;)\n\nhttps://colarusso.github.io/faq/coldcall.html`
+   
 // -------------------------------------   
 // -------------------------------------      
  
-// 14
+// 15
 ,`You can find my availability and book a time here: https://calendly.com/dcolarusso/call\n\nI look forward to speaking soon. `
   
-// 15
+// 16
 ,`To help schedule a time, I've set up a Doodle. I'll loop back after folks have a chance to mark their availability.\n\n `
    
-// 16
+// 17
 ,`Thank you for your time. `
 
-// 17
+// 18
 ,`Thank you for your time and consideration. ` 
   
-// 18
+// 19
 ,`Thank you for your time and assistance. `
 
-// 19
+// 20
 ,`As always, thank you for your time and assistance. `
 
 ];
@@ -137,14 +140,15 @@ block_to_insert.innerHTML = `
  <option value="11">Clarify Ask</option>
  <option value="12">LH Volunteer</option>
  <option value="13">Docassemble Server</otion>
+ <option value="14">Cold Call</otion>
  <option disabled>──────────</option>
  <option disabled>STRING:</option>
- <option value="14">Book Call</option>
- <option value="15">Doodle</option>
- <option value="16">Thx 4 UR Time</option>
- <option value="17">Thx 4 UR Time &amp; Consideration</option>
- <option value="18">Thx 4 UR Time &amp; Assistance</option>
- <option value="19">As Always, Thx</option>
+ <option value="15">Book Call</option>
+ <option value="16">Doodle</option>
+ <option value="17">Thx 4 UR Time</option>
+ <option value="18">Thx 4 UR Time &amp; Consideration</option>
+ <option value="19">Thx 4 UR Time &amp; Assistance</option>
+ <option value="20">As Always, Thx</option>
  <option disabled>──────────</option>
  <option value="10000">Edit Bookmarklet</option>
  <option value="20000">Bookmarklet Maker</option>
